@@ -2,6 +2,7 @@ package com.kot.retro.simplified
 
 import android.app.Application
 import com.kot.retro.retrofitsimplified.KRetrofitApi
+import com.kot.retro.retrofitsimplified.interceptors.ConnectivityInterceptor
 import okhttp3.OkHttpClient
 
 class App : Application(){
@@ -11,7 +12,8 @@ class App : Application(){
 
     override fun onCreate() {
         super.onCreate()
-        KRetrofitApi.initialize(API_BASE_URL , OkHttpClient.Builder().build())
+        KRetrofitApi.initialize(API_BASE_URL , OkHttpClient.Builder().
+            addInterceptor(ConnectivityInterceptor(this)).build())
 
     }
 }

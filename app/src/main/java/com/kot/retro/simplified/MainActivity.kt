@@ -5,8 +5,10 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.text.isDigitsOnly
 import androidx.lifecycle.Observer
 import com.kot.retro.retrofitsimplified.delegates.kRetrofitCreate
+import com.kot.retro.retrofitsimplified.enums.FailureType
 import com.kot.retro.retrofitsimplified.ext.enqueue
 import com.kot.retro.retrofitsimplified.imp.KResult
 import kotlinx.android.synthetic.main.activity_main.*
@@ -39,10 +41,15 @@ class MainActivity : AppCompatActivity() {
                         Log.i(TAG , "LOADING")
                     }
                     is KResult.Success->{
+                        it.data?.isDigitsOnly()
                         Log.i(TAG , "SUCCESS")
                     }
                     is KResult.Failure-> {
                         Log.i(TAG , "FAILURE")
+                        when(it.failureType){
+                            FailureType.CONVERSION->{}
+                            FailureType.NETWORK->{}
+                        }
                     }
                     is KResult.Error->{
                         Log.i(TAG , "ERROR $it")
