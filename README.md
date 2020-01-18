@@ -86,6 +86,29 @@ val apiService = KRetrofitApi.create<ApiService>()
  
 ```
 
+# KResult
+
+```
+when(kResult){
+  is KResult.Loading->{
+      Log.i(TAG , "LOADING")
+  }
+  is KResult.Success->{
+      Log.i(TAG , "SUCCESS")
+  }
+  is KResult.Failure-> {
+      Log.i(TAG , "FAILURE")
+      when(kResult.failureType){
+          FailureType.CONVERSION->Log.i(TAG , "DATA CONVERSION ERROR")
+          FailureType.NETWORK->Log.i(TAG , "NETWORK CONNECTIVITY ERROR")
+      }
+  }
+  is KResult.Error->{
+      Log.i(TAG , "ERROR")
+  }
+}
+```
+
 
 
 License
