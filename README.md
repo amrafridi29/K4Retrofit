@@ -69,7 +69,7 @@ val apiService = KRetrofitApi.create<ApiService>()
 
 ```
 
-# Use Fragment/Activity
+# Consume Api Request in Fragment/Activity
 
 ```
  Async Request
