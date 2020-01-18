@@ -55,7 +55,17 @@ allprojects {
 # Register Api Interface
 
 ```
+interface ApiService{
+    @GET("index")
+    fun getRepos(): Call<String>
+}
+
+
 private val apiService by kRetrofitCreate<ApiService>()
+
+OR
+
+val apiService = KRetrofitApi.create<ApiService>()
 
 ```
 
