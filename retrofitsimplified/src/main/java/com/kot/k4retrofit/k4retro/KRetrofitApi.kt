@@ -1,4 +1,4 @@
-package com.kot.retro.retrofitsimplified
+package com.kot.k4retrofit.k4retro
 
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient

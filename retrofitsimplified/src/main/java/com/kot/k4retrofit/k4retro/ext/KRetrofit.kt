@@ -1,10 +1,10 @@
-package com.kot.retro.retrofitsimplified.ext
+package com.kot.k4retrofit.k4retro.ext
 
 import androidx.lifecycle.MutableLiveData
-import com.kot.retro.retrofitsimplified.KRetrofitApi
-import com.kot.retro.retrofitsimplified.enums.FailureType
-import com.kot.retro.retrofitsimplified.imp.KResult
-import com.kot.retro.retrofitsimplified.utils.ErrorUtils
+import com.kot.k4retrofit.k4retro.KRetrofitApi
+import com.kot.k4retrofit.k4retro.enums.FailureType
+import com.kot.k4retrofit.k4retro.imp.KResult
+import com.kot.k4retrofit.k4retro.utils.ErrorUtils
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -39,7 +39,8 @@ inline fun <reified T> Call<T>.process(crossinline OnResult : (KResult<T>)-> Uni
     OnResult.invoke(KResult.Loading())
     enqueue(object : Callback<T>{
         override fun onFailure(call: Call<T>, t: Throwable) {
-           OnResult.invoke(KResult.Failure(call, t.message , when(t){
+           OnResult.invoke(
+               KResult.Failure(call, t.message , when(t){
                is IOException-> FailureType.NETWORK
                else-> FailureType.CONVERSION
            }))

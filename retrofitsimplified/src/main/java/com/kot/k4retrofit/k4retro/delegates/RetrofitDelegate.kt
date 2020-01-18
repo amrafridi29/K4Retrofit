@@ -1,6 +1,6 @@
-package com.kot.retro.retrofitsimplified.delegates
+package com.kot.k4retrofit.k4retro.delegates
 
-import com.kot.retro.retrofitsimplified.KRetrofitApi
+import com.kot.k4retrofit.k4retro.KRetrofitApi
 import kotlin.properties.ReadOnlyProperty
 import kotlin.reflect.KProperty
 

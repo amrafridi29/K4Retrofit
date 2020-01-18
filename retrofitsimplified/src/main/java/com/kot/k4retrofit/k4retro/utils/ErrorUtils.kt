@@ -1,9 +1,9 @@
 
 
-package com.kot.retro.retrofitsimplified.utils
+package com.kot.k4retrofit.k4retro.utils
 
-import com.kot.retro.retrofitsimplified.KRetrofitApi
-import com.kot.retro.retrofitsimplified.datas.APIError
+import com.kot.k4retrofit.k4retro.KRetrofitApi
+import com.kot.k4retrofit.k4retro.datas.APIError
 import retrofit2.Response
 import java.io.IOException
 

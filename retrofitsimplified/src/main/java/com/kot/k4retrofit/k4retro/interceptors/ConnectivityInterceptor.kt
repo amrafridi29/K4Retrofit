@@ -1,8 +1,8 @@
-package com.kot.retro.retrofitsimplified.interceptors
+package com.kot.k4retrofit.k4retro.interceptors
 
 import android.content.Context
 import android.net.ConnectivityManager
-import com.kot.retro.retrofitsimplified.exceptions.NoConnectivityException
+import com.kot.k4retrofit.k4retro.exceptions.NoConnectivityException
 import okhttp3.Interceptor
 import okhttp3.Response
 

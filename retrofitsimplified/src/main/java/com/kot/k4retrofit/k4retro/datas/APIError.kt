@@ -1,4 +1,4 @@
-package com.kot.retro.retrofitsimplified.datas
+package com.kot.k4retrofit.k4retro.datas
 
 class APIError {
     private val statusCode = 0

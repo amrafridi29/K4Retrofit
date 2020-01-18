@@ -1,4 +1,4 @@
-package com.kot.retro.retrofitsimplified.enums
+package com.kot.k4retrofit.k4retro.enums
 
 enum class FailureType {
     NETWORK,

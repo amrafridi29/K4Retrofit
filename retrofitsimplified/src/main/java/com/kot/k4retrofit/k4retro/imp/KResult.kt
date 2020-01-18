@@ -1,7 +1,7 @@
-package com.kot.retro.retrofitsimplified.imp
+package com.kot.k4retrofit.k4retro.imp
 
-import com.kot.retro.retrofitsimplified.datas.APIError
-import com.kot.retro.retrofitsimplified.enums.FailureType
+import com.kot.k4retrofit.k4retro.datas.APIError
+import com.kot.k4retrofit.k4retro.enums.FailureType
 import retrofit2.Call
 import retrofit2.Response
 

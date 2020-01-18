@@ -1,4 +1,4 @@
-package com.kot.retro.retrofitsimplified.exceptions
+package com.kot.k4retrofit.k4retro.exceptions
 
 import java.io.IOException
 
