@@ -27,9 +27,9 @@ allprojects {
 
 # How to use 
 
+# Init KRetrofitApi
+
 ```
- Application Class
- 
  class App : Application(){
    companion object{
        private const val API_BASE_URL: String = ""
@@ -50,81 +50,33 @@ allprojects {
             .build())
     }
 }
+```
 
+# Register Api Interface
+
+```
+private val apiService by kRetrofitCreate<ApiService>()
+
+```
+
+# Use Fragment/Activity
+
+```
+ Async Request
  
+ apiService.getRepos().process {kResult->}
  
+ Async Request with LiveData Observer
  
- In Activity or Fragment Observing for LiveData async request
+ apiService.getRepos().enqueue().observe(this , Observer {kResult->})
  
- apiService.getRepos().enqueue().observe(this , Observer {
-                when(it){
-                    is KResult.Loading->{
-                        Log.i(TAG , "LOADING")
-                    }
-                    is KResult.Success->{
-                        Log.i(TAG , "SUCCESS")
-                    }
-                    is KResult.Failure-> {
-                        Log.i(TAG , "FAILURE")
-                        when(it.failureType){
-                            FailureType.CONVERSION->{}
-                            FailureType.NETWORK->{}
-                        }
-                    }
-                    is KResult.Error->{
-                        Log.i(TAG , "ERROR $it")
-                    }
-                }
-            })
-            
-            
-    Or Simple Result async request
-    
-    apiService.getRepos().process{
-    
-        when(it){
-          is KResult.Loading->{
-               Log.i(TAG , "LOADING")
-          }
-          is KResult.Success->{
-             Log.i(TAG , "SUCCESS")
-          }
-          is KResult.Failure-> {
-            Log.i(TAG , "FAILURE")
-            when(it.failureType){
-                FailureType.CONVERSION->{}
-                FailureType.NETWORK->{}
-            }
-          }
-          is KResult.Error->{
-              Log.i(TAG , "ERROR $it")
-          }
-        }
-    }
-    
-    sync request
-    
-    apiService.getRepos().run{
-    
-        when(it){
-          is KResult.Success->{
-             Log.i(TAG , "SUCCESS")
-          }
-          is KResult.Failure-> {
-            Log.i(TAG , "FAILURE")
-            when(it.failureType){
-                FailureType.CONVERSION->{}
-                FailureType.NETWORK->{}
-            }
-          }
-          is KResult.Error->{
-              Log.i(TAG , "ERROR $it")
-          }
-        }
-    }
-    
+ Sync Request
+ 
+ apiService.getRepos().run{kResult->}
  
 ```
+
+
 
 License
 -------
